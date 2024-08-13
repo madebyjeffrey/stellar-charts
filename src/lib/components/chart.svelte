@@ -124,7 +124,7 @@
 		<!--	<line x1={chartAreaLeft - yTickLength} y1={chartAreaBottom - (i+1)*yAxisBoxHeight} x2={chartAreaLeft + yTickLength} y2={chartAreaBottom - (i+1)*yAxisBoxHeight} class="axis-line"/>-->
 		<!--{/each}-->
 
-		 {#each model.yAxisValues as value, i}
+		 {#each model.yAxisValues as value}
 			 <text text-anchor="end" x={chartAreaLeft - yTickLength - 1} y={chartAreaBottom - pieceWiseAxis.rangeValue(value) + axisLabelHeight / 3} class="axis" fill={colourForRange(value)}>{model.yAxisValueLabel(value)}</text>
 			 <line x1={chartAreaLeft - yTickLength} y1={chartAreaBottom - pieceWiseAxis.rangeValue(value)} x2={chartAreaLeft + yTickLength} y2={chartAreaBottom - pieceWiseAxis.rangeValue(value)} class="axis-line"/>
 		 {/each}

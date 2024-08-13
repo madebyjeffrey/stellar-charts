@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { engines } from '$lib/engines';
-	import { AxisType, type ChartModel } from '$lib/chart.model';
+	import { type ChartModel } from '$lib/chart.model';
 	import { onMount } from 'svelte';
 	import Chart from  "$lib/components/chart.svelte";
 
