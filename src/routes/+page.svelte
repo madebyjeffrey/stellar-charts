@@ -10,9 +10,11 @@
 
 	function handleSelectedEngine() {
 		console.log(selected);
+
+		updateChart();
 	}
 
-	onMount(() => {
+	function updateChart() {
 		chartData = {
 			title: "Fuel Usage vs. Warp Speed",
 			yAxisRange: [0, 1000],
@@ -30,13 +32,17 @@
 			highlightMinRange: engines.find(x => x.key === selected)!.maxSafeSpeed + 1,
 			freeXValue: engines.find(x => x.key === selected)!.idealSpeed,
 		};
+	}
+
+	onMount(() => {
+		updateChart();
 	});
 </script>
 
 <h1>Stellar Charts</h1>
 
 <span>Select Engine</span>
-<select bind:value={selected} on:change={handleSelectedEngine} class="select">
+<select bind:value={selected} on:change={handleSelectedEngine} class="select select-bordered w-full max-w-xs">
 	{#each engines as engine (engine.key)}
 		<option value={engine.key}>{engine.name}</option>
 	{/each}
